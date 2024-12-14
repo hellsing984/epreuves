@@ -1,54 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Glory</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header class="navbar">
-        <nav>
-            <ul>
-                <li><a href="#home">accuille</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#about">a propos</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="#home">accuille</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">a propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="profile">
-                <img src="/image/Quan Zhi Gao Shou.jpg" alt="Quan Zhi Gao Shou">
-                <div class="info">
-                    <h1>Quan Zhi Gao Shou</h1>
-                    <p>Adventurer, Explorer, Storyteller</p>
-                    <button id="boutton">Inscription du site</button>
-                </div>
-            </div>
-        </section>
+      <section class="hero">
+        <div class="profile">
+          <img src="/image/Quan Zhi Gao Shou.jpg" alt="Quan Zhi Gao Shou" />
+          <div class="info">
+            <h1>Quan Zhi Gao Shou</h1>
+            <p>Adventurer, Explorer, Storyteller</p>
+            <button id="boutton">Inscription du site</button>
+          </div>
+        </div>
+      </section>
 
-        <section class="gallery" id="gallery">
-            <h2>Gallery</h2>
-            <div class="gallery-grid">
-                <img src="./image/king.jpg" alt="son équipe">
-                <img src="./image/logo.jpg" alt="logo">
-                <img src="./image/personnage.jpg" alt="avant apres">
-                <img src="./image/tournois.jpg" alt="Adventure Image 4">
-            </div>
-        </section>
+      <section class="gallery" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <img src="./image/king.jpg" alt="son équipe" />
+          <img src="./image/logo.jpg" alt="logo" />
+          <img src="./image/personnage.jpg" alt="avant apres" />
+          <img src="./image/tournois.jpg" alt="Adventure Image 4" />
+        </div>
+      </section>
+      <section id="form">
+        <h3>Formulaire de contact</h3>
+        <p>
+          Contactez moi directement par email en utilisant le formulaire de
+          contact ci-dessous.
+        </p>
+        <form action="" class="contatc">
+          <div class="fieldGroup">
+            <label for="nom">Nom</label><input name="nom" type="text" />
+          </div>
+          <div class="fieldGroup">
+            <label for="prenom">Prénom</label
+            ><input name="prenom" type="text" />
+          </div>
+          <div class="fieldGroup">
+            <label for="telephone">Téléphone</label
+            ><input name="telephone" type="text" />
+          </div>
+          <div class="fieldGroup">
+            <textarea name="message" id="message">message</textarea>
+          </div>
+          <div class="fieldGroup"><button>Envoyer</button></div>
+        </form>
+      </section>
 
-        <section class="about" id="about">
-            <h2>QUI EST Ye Xiu ?</h2>
-            <p>de Ye Xiu, un joueur d'e-sport professionnel vivant à Hangzhou , en Chine . Largement considéré comme le meilleur joueur du jeu vidéo Glory , Ye Xiu était capitaine de l'équipe d'e-sport,</p>
-        </section>
+      <section class="about" id="about">
+        <h2>QUI EST Ye Xiu ?</h2>
+        <p>
+          de Ye Xiu, un joueur d'e-sport professionnel vivant à Hangzhou , en
+          Chine . Largement considéré comme le meilleur joueur du jeu vidéo
+          Glory , Ye Xiu était capitaine de l'équipe d'e-sport,
+        </p>
+        <div id="daysSinceBirth"></div>
+        <div id="texte-section"></div>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2024 Glory. All rights reserved.</p>
+      <p>&copy; 2024 Glory. All rights reserved.</p>
     </footer>
 
     <script src="styles.js"></script>
-</body>
+  </body>
 </html>
