@@ -1,4 +1,4 @@
-/* CSS Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: auto;
@@ -13,23 +13,24 @@ body {
     color: #fff;
     padding: 1rem;
 }
-.navbar nav ul {
+.navbar__nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
 }
-.navbar nav ul li {
+.navbar__nav ul li {
     margin: 0 15px;
 }
-.navbar nav ul li a {
+.navbar__nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
-.navbar nav ul li a.active {
+.navbar__nav ul li a.active {
     text-decoration: underline;
 }
+
 .hero {
     display: flex;
     align-items: center;
@@ -41,7 +42,7 @@ body {
     text-align: center;
     padding: 100px 20px;
 }
-.hero .profile {
+.hero__profile {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,76 +50,102 @@ body {
     padding: 20px;
     border-radius: 10px;
 }
-.hero img {
+.hero__image {
     width: 150px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
+.hero__title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.hero__description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.hero__button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 15px 32px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.hero__button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
 .gallery {
     padding: 50px 20px;
     text-align: center;
 }
-.gallery h2 {
+.gallery__title {
     margin-bottom: 20px;
     color: #ece4e4;
 }
-.gallery-grid {
+.gallery__grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
-.gallery img {
+.gallery__image {
     width: calc(25% - 20px);
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.gallery img:hover {
-    transform: rotate(5deg) scale(1.05); /* Légère rotation et zoom */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ajoute une ombre */
+.gallery__image:hover {
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 768px) {
-    .gallery img {
+    .gallery__image {
         width: calc(50% - 20px);
     }
 }
 @media (max-width: 480px) {
-    .gallery img {
+    .gallery__image {
         width: 100%;
     }
 }
+
 .about {
     padding: 50px 20px;
     text-align: center;
     color: #ece4e4;
 }
+.about__title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.about__text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.quote{
+    padding: 50px 20px;
+    text-align: center;
+    color: #ece4e4;
+}
+.quote__title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.quote__text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
 }
-/* Style du bouton d'inscription */
-#boutton {
-background-color: #4CAF50; /* Couleur de fond verte */
-color: white; /* Texte blanc */
-font-size: 16px; /* Taille du texte */
-padding: 15px 32px; /* Espace autour du texte */
-border: none; /* Suppression des bordures par défaut */
-border-radius: 8px; /* Coins arrondis */
-cursor: pointer; /* Curseur pointeur pour indiquer que c'est cliquable */
-transition: background-color 0.3s ease, transform 0.2s ease; /* Transition fluide */
-}
-/* Effet au survol du bouton */
-#boutton:hover {
-background-color: #45a049; /* Couleur plus sombre au survol */
-transform: scale(1.05); /* Agrandir légèrement le bouton */
-}
-/* Style pour les messages d'alerte dans la console */
-.console-message {
-font-size: 14px;
-color: #333;
-}
+
 #form {
     margin-top: 1rem;
     padding: 0 2rem;
@@ -127,43 +154,45 @@ color: #333;
     box-shadow: 5px 5px 9px -5px rgba(0, 0, 0, 0.53);
     background-color: #ece4e4;
 }
+
 .contact {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
-.fieldGroup {
+.contact__field-group {
     margin-bottom: .5rem;
     padding: .5rem 1rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.fieldGroup label {
+.contact__label {
     display: block;
     width: 33%;
     font-weight: bold;
 }
-.fieldGroup input {
+.contact__input {
     border-radius: 50px;
     height: 40px;
     border: 1px solid black;
     flex-grow: 1;
 }
-.contact textarea {
+.contact__textarea {
     width: 100%;
     height: 150px;
 }
-.contact button {
+.contact__button {
     border-radius: 50px;
     background-color: lightgrey;
     padding: .5rem 2rem;
     font-size: 18px;
 }
-.contact button:hover {
+.contact__button:hover {
     background-color: #6900d1;
     color: white;
 }
+
 .lightbox {
     position: fixed;
     top: 0;
@@ -181,7 +210,7 @@ color: #333;
     max-height: 80%;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
 }
-.lightbox-close {
+.lightbox__close {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -191,6 +220,7 @@ color: #333;
     cursor: pointer;
     z-index: 1100;
 }
+
 .popup {
     display: none;
     position: fixed;
@@ -221,7 +251,7 @@ color: #333;
 .popup-overlay.visible {
     display: block;
 }
-.popup button {
+.popup__button {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #4caf50;
@@ -230,10 +260,11 @@ color: #333;
     border-radius: 5px;
     cursor: pointer;
 }
-.popup button:hover {
+.popup__button:hover {
     background-color: #45a049;
 }
-/* Changement de couleur au survol */
+
 a:hover {
     color: rgb(231, 218, 218); /* Change en rouge */
 }
+

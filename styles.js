@@ -1,88 +1,14 @@
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.navbar nav ul li a'); // Navigation links
-    const sections = document.querySelectorAll('section'); // All sections in the document
-
-    // Add smooth scrolling to navigation links
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent default link behavior
-            const targetId = link.getAttribute('href').slice(1); // Get the target section ID
-            const targetSection = document.getElementById(targetId); // Find the section element
-
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly to the section
-                navLinks.forEach(nav => nav.classList.remove('active')); // Remove active class from all links
-                link.classList.add('active'); // Add active class to the clicked link
-            }
-        });
-    });
-
-    // Highlight active section on scroll
-    window.addEventListener('scroll', () => {
-        let current = ''; // Track the current visible section
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 60; // Adjust offset for fixed navbar height
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute('id'); // Get the ID of the section in view
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active'); // Remove active class from all links
-            if (link.getAttribute('href').slice(1) === current) {
-                link.classList.add('active'); // Add active class to the link corresponding to the current section
-            }
-        });
-    });
-
-    // Learn More button smooth scroll
-    const learnMoreButton = document.getElementById('learn-more');
-    learnMoreButton.addEventListener('click', () => {
-        const aboutSection = document.getElementById('about'); // Find the "About" section
-        aboutSection.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly to the "About" section
-    });
-});
-  // Vérification que le DOM est prêt
-  document.addEventListener('DOMContentLoaded', function() {
-    // Récupérer l'élément du bouton
-    const boutonInscription = document.getElementById('boutton');
-    
-    // Vérifier si le bouton est bien trouvé
-    if (boutonInscription) {
-        console.log("Le bouton a été trouvé !");
-
-        // Ajouter un événement de clic au bouton
-        boutonInscription.addEventListener('click', function() {
-            // Afficher un message d'alerte
-            alert("Vous êtes inscrit !");
-        });
-    } else {
-        console.error("Le bouton n'a pas été trouvé !");
-    }
-});
-document.addEventListener('DOMContentLoaded', () => {
-    // Date de naissance (29 mai 1997)
-    const birthDate = new Date('1997-05-29');
-
-    // Date actuelle
-    const currentDate = new Date();
-
-    // Calcul du nombre de jours écoulés
-    const timeDifference = currentDate - birthDate;
-    const daysSinceBirth = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); // Conversion en jours
-
-    // Affichage du résultat dans l'élément avec l'ID 'daysSinceBirth'
-    const resultElement = document.getElementById('daysSinceBirth');
-    resultElement.textContent = `Il y a ${daysSinceBirth} jours que Ye Xiu es né !`;
-    // Gestion de la navigation
-    const navLinks = document.querySelectorAll('.navbar nav ul li a');
+    // Navigation: liens et sections
+    const navLinks = document.querySelectorAll('.navbar__nav ul li a');
     const sections = document.querySelectorAll('section');
 
+    // Smooth scrolling pour les liens de navigation
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = link.getAttribute('href').slice(1);
+            const targetId = link.getAttribute('href').slice(1); // ID de la section
             const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
@@ -93,56 +19,79 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Mise à jour de l'état actif des liens au scroll
     window.addEventListener('scroll', () => {
-        let current = '';
+        let currentSection = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 60;
+            const sectionTop = section.offsetTop - 60; // Ajuste pour la hauteur de la navbar
             if (window.scrollY >= sectionTop) {
-                current = section.getAttribute('id');
+                currentSection = section.getAttribute('id');
             }
         });
 
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href').slice(1) === current) {
+            if (link.getAttribute('href').slice(1) === currentSection) {
                 link.classList.add('active');
             }
         });
     });
 
-    // Gestion de la lightbox
-    const galleryImages = document.querySelectorAll('.gallery-grid img');
-    const lightbox = document.createElement('div');
-    lightbox.className = 'lightbox';
-    document.body.appendChild(lightbox);
-
-    const lightboxImage = document.createElement('img');
-    lightbox.appendChild(lightboxImage);
-
-    const closeButton = document.createElement('span');
-    closeButton.className = 'lightbox-close';
-    closeButton.innerText = '×';
-    lightbox.appendChild(closeButton);
-
-    galleryImages.forEach(img => {
-        img.addEventListener('click', () => {
-            lightboxImage.src = img.src;
-            lightbox.style.display = 'flex';
+    // Bouton "Learn More" vers la section "About"
+    const learnMoreButton = document.getElementById('learn-more');
+    if (learnMoreButton) {
+        learnMoreButton.addEventListener('click', () => {
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
-    });
+    }
 
-    closeButton.addEventListener('click', () => {
-        console.log("Croix cliquée"); // Debug
-        lightbox.style.display = 'none';
-    });
+    // Calcul des jours depuis une date de naissance
+    const birthDate = new Date('1997-05-29');
+    const currentDate = new Date();
+    const timeDifference = currentDate - birthDate;
+    const daysSinceBirth = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const resultElement = document.getElementById('daysSinceBirth');
+    if (resultElement) {
+        resultElement.textContent = `Il y a ${daysSinceBirth} jours que Ye Xiu est né !`;
+    }
 
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
+    // Gestion de la lightbox pour les images de la galerie
+    const galleryImages = document.querySelectorAll('.gallery__image');
+    if (galleryImages.length > 0) {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        document.body.appendChild(lightbox);
+
+        const lightboxImage = document.createElement('img');
+        lightbox.appendChild(lightboxImage);
+
+        const closeButton = document.createElement('span');
+        closeButton.className = 'lightbox__close';
+        closeButton.innerText = '×';
+        lightbox.appendChild(closeButton);
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImage.src = img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        closeButton.addEventListener('click', () => {
             lightbox.style.display = 'none';
-        }
-    });
+        });
 
-    // Gestion du bouton inscription
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    }
+
+    // Bouton d'inscription avec un message d'alerte
     const boutonInscription = document.getElementById('boutton');
     if (boutonInscription) {
         boutonInscription.addEventListener('click', () => {
@@ -150,16 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Ajout du bouton "Dévoiler le secret" et gestion de la popup
-    const texteSection = document.getElementById('texte-section'); // Assure-toi que cette section existe dans ton HTML
+    // Bouton secret "Attention danger" et gestion de la popup
+    const texteSection = document.getElementById('texte-section');
     if (texteSection) {
-        // Création du bouton
         const secretButton = document.createElement('button');
-        secretButton.innerText = 'attantion danger !!';
+        secretButton.innerText = 'Attention danger !!';
         secretButton.className = 'secret-button';
         texteSection.appendChild(secretButton);
 
-        // Création de la popup et de l'overlay
         const popupOverlay = document.createElement('div');
         popupOverlay.className = 'popup-overlay';
         document.body.appendChild(popupOverlay);
@@ -167,25 +114,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const popup = document.createElement('div');
         popup.className = 'popup';
         popup.innerHTML = `
-            <p>il as était 5 fois champions du monde et meilleux joueur 5 fois deux suite 🎉</p>
-            <button>Fermer</button>
+            <p>Il a été 5 fois champion du monde et meilleur joueur 5 fois de suite 🎉</p>
+            <button class="popup__button">Fermer</button>
         `;
         document.body.appendChild(popup);
 
-        // Afficher la popup
         secretButton.addEventListener('click', () => {
             popup.classList.add('visible');
             popupOverlay.classList.add('visible');
         });
 
-        // Fermer la popup via le bouton
-        const closeButton = popup.querySelector('button');
+        const closeButton = popup.querySelector('.popup__button');
         closeButton.addEventListener('click', () => {
             popup.classList.remove('visible');
             popupOverlay.classList.remove('visible');
         });
 
-        // Fermer la popup en cliquant sur l'overlay
         popupOverlay.addEventListener('click', () => {
             popup.classList.remove('visible');
             popupOverlay.classList.remove('visible');

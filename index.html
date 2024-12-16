@@ -10,85 +10,86 @@
 
 <body>
     <header class="navbar">
-        <nav>
-            <ul>
-                <li><a href="#home">accueil</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#about">A propos</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <nav class="navbar__nav">
+            <ul class="navbar__list">
+                <li class="navbar__item"><a class="navbar__link" href="#home">accueil</a></li>
+                <li class="navbar__item"><a class="navbar__link" href="#gallery">Gallery</a></li>
+                <li class="navbar__item"><a class="navbar__link" href="#about">A propos</a></li>
+                <li class="navbar__item"><a class="navbar__link" href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="main">
         <section class="hero">
-            <div class="profile">
-                <img src="/image/Quan_Zhi_Gao_Shou.jpg" alt="Quan Zhi Gao Shou">
-                <div class="info">
-                    <h1>Quan Zhi Gao Shou</h1>
-                    <p>Adventurer, Explorer, Storyteller</p>
-                    <button id="boutton">Inscription du site</button>
+            <div class="hero__profile">
+                <img class="hero__image" src="/image/Quan_Zhi_Gao_Shou.jpg" alt="Quan Zhi Gao Shou">
+                <div class="hero__info">
+                    <h1 class="hero__title">Quan Zhi Gao Shou</h1>
+                    <p class="hero__description">Adventurer, Explorer, Storyteller</p>
+                    <button class="hero__button" id="boutton">Inscription du site</button>
                 </div>
             </div>
         </section>
+
         <section class="about" id="about">
-            <h2>BIOGRAPHIE ?</h2>
-            <p>
+            <h2 class="about__title">BIOGRAPHIE ?</h2>
+            <p class="about__text">
                 de Ye Xiu, un joueur d'e-sport professionnel vivant à Hangzhou , en
                 Chine . Largement considéré comme le meilleur joueur du jeu vidéo
                 Glory , Ye Xiu était capitaine de l'équipe d'e-sport,
             </p>
-            <div id="daysSinceBirth"></div>
-            <div id="texte-section"></div>
+            <div class="about__birthdays" id="daysSinceBirth"></div>
+            <div class="about__text-section" id="texte-section"></div>
         </section>
 
         <section class="gallery" id="gallery">
-            <h2>OEUVRE</h2>
-            <div class="gallery-grid">
-                <img src="./image/king.jpg" alt="son équipe" >
-                <img src="./image/logo.jpg" alt="logo">
-                <img src="./image/personnage.jpg" alt="avant apres">
-                <img src="./image/tournois.jpg" alt="Adventure Image 4">
-                <img src="./image/equipe.jpg" alt="Adventure Image 4">
-                <img src="./image/manga.jpg" alt="Adventure Image 4">
+            <h2 class="gallery__title">OEUVRE</h2>
+            <div class="gallery__grid">
+                <img class="gallery__image" src="./image/king.jpg" alt="son équipe">
+                <img class="gallery__image" src="./image/logo.jpg" alt="logo">
+                <img class="gallery__image" src="./image/personnage.jpg" alt="avant apres">
+                <img class="gallery__image" src="./image/tournois.jpg" alt="Adventure Image 4">
+                <img class="gallery__image" src="./image/equipe1.jpg" alt="Adventure Image 4">
+                <img class="gallery__image" src="./image/manga.jpg" alt="Adventure Image 4">
             </div>
         </section>
-        <section class="about" id="about">
-            <h2>CITATION ?</h2>
-            <p>
-                "Tous les problèmes qui pourraient être résolus avec de l'argent ne sont pas des problèmes." 
+
+        <section class="quote">
+            <h2 class="quote__title">CITATION ?</h2>
+            <p class="quote__text">
+                "Tous les problèmes qui pourraient être résolus avec de l'argent ne sont pas des problèmes."
             </p>
-            <p>
-                "Il est clair que ceux qui disent cela sont tous des gens riches.""
+            <p class="quote__text">
+                "Il est clair que ceux qui disent cela sont tous des gens riches."
             </p>
-            <div id="daysSinceBirth"></div>
-            <div id="texte-section"></div>
         </section>
-        <section id="form">
-            <h3>Formulaire de contact</h3>
-            <p>
+
+        <section class="contact" id="form">
+            <h3 class="contact__title">Formulaire de contact</h3>
+            <p class="contact__description">
                 Contactez moi directement par email en utilisant le formulaire de
                 contact ci-dessous.
             </p>
-            <form class="contatc">
-                <div class="fieldGroup">
-                    <label>Nom</label><input name="nom" type="text">
+            <form class="contact__form">
+                <div class="contact__field-group">
+                    <label class="contact__label">Nom</label><input class="contact__input" name="nom" type="text">
                 </div>
-                <div class="fieldGroup">
-                    <label>Prénom</label><input name="prenom" type="text">
+                <div class="contact__field-group">
+                    <label class="contact__label">mail</label><input class="contact__input" name="mail" type="text">
                 </div>
-                <div class="fieldGroup">
-                    <label>Téléphone</label><input name="telephone" type="number">
+                <div class="contact__field-group">
+                    <textarea class="contact__textarea" name="message" id="message">Message</textarea>
                 </div>
-                <div class="fieldGroup">
-                    <textarea name="message" id="message">Message</textarea>
+                <div class="contact__field-group">
+                    <button class="contact__button">Envoyer</button>
                 </div>
-                <div class="fieldGroup"><button>Envoyer</button></div>
             </form>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Glory. site sur surveillence.</p>
+
+    <footer class="footer">
+        <p class="footer__text">&copy; 2024 Glory. site sur surveillance.</p>
     </footer>
 
     <script src="styles.js"></script>
