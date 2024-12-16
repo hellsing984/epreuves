@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (texteSection) {
         // Création du bouton
         const secretButton = document.createElement('button');
-        secretButton.innerText = 'Dévoiler le secret';
+        secretButton.innerText = 'attantion danger !!';
         secretButton.className = 'secret-button';
         texteSection.appendChild(secretButton);
 
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const popup = document.createElement('div');
         popup.className = 'popup';
         popup.innerHTML = `
-            <p>Bravo, tu as découvert l'easter egg ! 🎉</p>
+            <p>il as était 5 fois champions du monde et meilleux joueur 5 fois deux suite 🎉</p>
             <button>Fermer</button>
         `;
         document.body.appendChild(popup);
