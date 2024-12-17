@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Calcul des jours depuis une date de naissance
-    const birthDate = new Date('1997-05-29');
+    const birthDate = new Date('1987-05-29');
     const currentDate = new Date();
     const timeDifference = currentDate - birthDate;
     const daysSinceBirth = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
