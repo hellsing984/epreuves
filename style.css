@@ -7,7 +7,7 @@ body {
     background-color: #f4f4f9;
     background-image: url('./image/images1.jpeg'); /* Image d'arrière-plan */
 }
-
+/* personnage */
 .navbar {
     background-color: #333;
     color: #fff;
@@ -30,12 +30,11 @@ body {
 .navbar__nav ul li a.active {
     text-decoration: underline;
 }
-
+/* Personnage */
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('hero-background.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -77,10 +76,12 @@ body {
     background-color: #45a049;
     transform: scale(1.05);
 }
-
+/* galerie avec l'image */
 .gallery {
     padding: 50px 20px;
     text-align: center;
+    width: 40vw;
+    margin: auto;
 }
 .gallery__title {
     margin-bottom: 20px;
@@ -101,34 +102,65 @@ body {
     transform: rotate(5deg) scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
+/*responsive tablette*/
 @media (max-width: 768px) {
     .gallery__image {
         width: calc(50% - 20px);
     }
-}
-@media (max-width: 480px) {
-    .gallery__image {
+    .contact{
+        
         width: 100%;
     }
+    main{
+        overflow-y: scroll;
+        height: 43rem;
+        margin: 1rem;
+    }
 }
-
+/*responsive mobile*/
+@media (max-width: 480px) {
+    .gallery__image {
+        width:  calc(50% - 20px);
+    }
+    .contact{
+        width: 100%;
+    }
+    .contact__input {
+        border-radius: 40px;
+        height: 40px;
+        border: 1px solid black;
+        flex-grow: 1;
+    }
+    .contact__textarea {
+        width: 50%;
+        height: 50px;
+    }
+}
+/* BIOGRAPHIS */
 .about {
     padding: 50px 20px;
     text-align: center;
-    color: #ece4e4;
+    color: rgb(238, 229, 229); /* Couleur du texte par défaut */
+    transition: color 0.3s; /* Transition douce pour le changement de couleur */
 }
 .about__title {
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 10px;  
 }
 .about__text {
     font-size: 1.2rem;
     margin-bottom: 20px;
+   
 }
+.about:hover{
+    color: rgb(17, 222, 14); /* Couleur du texte au survol */
+}
+/* citation */
 .quote{
-    padding: 50px 20px;
+    padding: 30px 20px;
     text-align: center;
-    color: #ece4e4;
+    color: rgb(238, 229, 229); /* Couleur du texte par défaut */
+    transition: color 0.3s; /* Transition douce pour le changement de couleur */
 }
 .quote__title {
     font-size: 2rem;
@@ -138,14 +170,15 @@ body {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
-
+.quote:hover{
+    color: rgb(209, 8, 172); /* Couleur du texte au survol */
+}
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
 }
-
 #form {
     margin-top: 1rem;
     padding: 0 2rem;
@@ -154,11 +187,13 @@ footer {
     box-shadow: 5px 5px 9px -5px rgba(0, 0, 0, 0.53);
     background-color: #ece4e4;
 }
-
+/* formulaire contact */
 .contact {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    width: 40vw;
+    margin: auto;
 }
 .contact__field-group {
     margin-bottom: .5rem;
@@ -167,31 +202,34 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+
 .contact__label {
     display: block;
-    width: 33%;
+    width: 20%;
     font-weight: bold;
 }
 .contact__input {
-    border-radius: 50px;
+    border-radius: 40px;
     height: 40px;
     border: 1px solid black;
     flex-grow: 1;
 }
 .contact__textarea {
-    width: 100%;
-    height: 150px;
+    width: 50%;
+    height: 50px;
 }
 .contact__button {
     border-radius: 50px;
     background-color: lightgrey;
     padding: .5rem 2rem;
-    font-size: 18px;
+    font-size: 10px;
+    
 }
 .contact__button:hover {
     background-color: #6900d1;
     color: white;
 }
+/*lighbox */
 .lightbox {
     position: fixed;
     top: 0;
@@ -219,7 +257,7 @@ footer {
     cursor: pointer;
     z-index: 1100;
 }
-
+/* bouton secret */
 .popup {
     display: none;
     position: fixed;
@@ -262,8 +300,41 @@ footer {
 .popup__button:hover {
     background-color: #45a049;
 }
-
 a:hover {
     color: rgb(231, 218, 218); /* Change en rouge */
 }
+.button {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    color: rgb(238, 229, 229); /* Couleur du texte par défaut */
+    transition: color 0.3s; /* Transition douce pour le changement de couleur */
+}
+.button--danger {
+    background-color: rgb(2, 9, 0);
+    color: white;
+}
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #f3ecec;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 1;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none;
+    z-index: 1000;
+}
+.tooltip--hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
 

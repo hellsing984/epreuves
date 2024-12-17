@@ -99,14 +99,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Bouton secret "Attention danger" et gestion de la popup
-    const texteSection = document.getElementById('texte-section');
-    if (texteSection) {
-        const secretButton = document.createElement('button');
-        secretButton.innerText = 'Attention danger !!';
-        secretButton.className = 'secret-button';
-        texteSection.appendChild(secretButton);
+    // Bouton "Attention danger" et gestion de l'infobulle en BEM
+const texteSection = document.getElementById('texte-section');
+if (texteSection) {
+    const secretButton = document.createElement('button');
+    secretButton.innerText = 'Attention danger !!';
+    secretButton.className = 'button button--danger';
+    texteSection.appendChild(secretButton);
 
+    // Création de la bulle
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip tooltip--hidden';
+    tooltip.innerText = 'Il a été 5 fois champion du monde et meilleur joueur 5 fois de suite 🎉';
+    document.body.appendChild(tooltip);
+
+    // Gestion de l'apparition de la bulle
+    secretButton.addEventListener('mouseenter', (e) => {
+        tooltip.style.left = `${e.clientX}px`;
+        tooltip.style.top = `${e.clientY + 10}px`; // Décalage de 10px sous la souris
+        tooltip.classList.remove('tooltip--hidden');
+    });
+
+    secretButton.addEventListener('mouseleave', () => {
+        tooltip.classList.add('tooltip--hidden');
+    });
         const popupOverlay = document.createElement('div');
         popupOverlay.className = 'popup-overlay';
         document.body.appendChild(popupOverlay);
@@ -135,4 +151,5 @@ document.addEventListener('DOMContentLoaded', () => {
             popupOverlay.classList.remove('visible');
         });
     }
+    
 });
