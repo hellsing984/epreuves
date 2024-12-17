@@ -142,6 +142,10 @@ body {
     text-align: center;
     color: rgb(238, 229, 229); /* Couleur du texte par défaut */
     transition: color 0.3s; /* Transition douce pour le changement de couleur */
+    display: flex;
+}
+.about__bio{
+    width: 70%;
 }
 .about__title {
     font-size: 2rem;
@@ -149,7 +153,9 @@ body {
 }
 .about__text {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+     text-align: justify;
+     margin: 20px auto;
+     width: 50%;
    
 }
 .about:hover{
@@ -169,6 +175,7 @@ body {
 .quote__text {
     font-size: 1.2rem;
     margin-bottom: 20px;
+    
 }
 .quote:hover{
     color: rgb(209, 8, 172); /* Couleur du texte au survol */
@@ -336,5 +343,38 @@ a:hover {
     opacity: 0;
     transform: translateY(-20px);
 }
+/* bulle*/
+.timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 70%;
+    margin: auto;
 
-
+  }
+  .bulle {
+    background-color: #6e6e6e;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  .bulle h2 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    flex-direction: center;
+  }
+  .bulle p {
+    margin: 10px 0 0;
+    font-size: 1em;
+    flex-direction:center;
+  }
+.image__droite{
+    padding: 50px 20px;
+    text-align: center;
+    width: 20vw;
+    margin: auto;
+}

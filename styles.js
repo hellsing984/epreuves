@@ -54,10 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeDifference = currentDate - birthDate;
     const daysSinceBirth = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     const resultElement = document.getElementById('daysSinceBirth');
+
     if (resultElement) {
         resultElement.textContent = `Il y a ${daysSinceBirth} jours que Ye Xiu est né !`;
     }
-
     // Gestion de la lightbox pour les images de la galerie
     const galleryImages = document.querySelectorAll('.gallery__image');
     if (galleryImages.length > 0) {
@@ -110,7 +110,7 @@ if (texteSection) {
     // Création de la bulle
     const tooltip = document.createElement('div');
     tooltip.className = 'tooltip tooltip--hidden';
-    tooltip.innerText = 'Il a été 5 fois champion du monde et meilleur joueur 5 fois de suite 🎉';
+    tooltip.innerText = 'Il a été 4 fois champion du monde et meilleur joueur 5 fois de suite 🎉';
     document.body.appendChild(tooltip);
 
     // Gestion de l'apparition de la bulle
