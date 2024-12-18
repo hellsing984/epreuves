@@ -161,6 +161,31 @@ body {
 .about:hover{
     color: rgb(17, 222, 14); /* Couleur du texte au survol */
 }
+/* histoire*/
+.about__suite {
+    padding: 50px 20px;
+    text-align: center;
+    color: rgb(238, 229, 229); /* Couleur du texte par défaut */
+    transition: color 0.3s; /* Transition douce pour le changement de couleur */
+    display: flex;
+}
+.about__bio{
+    width: 70%;
+}
+.about__title {
+    font-size: 2rem;
+    margin-bottom: 10px;  
+}
+.about__text {
+    font-size: 1.2rem;
+     text-align: justify;
+     margin: 20px auto;
+     width: 50%;
+   
+}
+.about__suite:hover{
+    color: rgb(17, 222, 14); /* Couleur du texte au survol */
+}
 /* citation */
 .quote{
     padding: 30px 20px;
@@ -365,12 +390,12 @@ a:hover {
     margin: 0;
     font-size: 1.5em;
     font-weight: bold;
-    flex-direction: center;
+    display: flex;
   }
   .bulle p {
     margin: 10px 0 0;
     font-size: 1em;
-    flex-direction:center;
+    display:flex;
   }
 .image__droite{
     padding: 50px 20px;
